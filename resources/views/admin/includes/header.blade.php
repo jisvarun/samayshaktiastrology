@@ -49,7 +49,7 @@
                 <i class="mgc_notification_line text-2xl"></i>
             </span>
         </button>
-        <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-80 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg">
+        {{-- <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-80 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg">
 
             <div class="p-2 border-b border-dashed border-gray-200 dark:border-gray-700">
                 <div class="flex items-center justify-between">
@@ -146,7 +146,7 @@
             <a href="javascript:void(0);" class="p-2 border-t border-dashed border-gray-200 dark:border-gray-700 block text-center text-primary underline font-semibold">
                 View All
             </a>
-        </div>
+        </div> --}}
     </div>
 
     {{-- Light/Dark Toggle Button --}}
@@ -165,7 +165,7 @@
             <img src="{{asset('assets/images/users/user-6.jpg')}}" alt="user-image" class="rounded-full h-10">
         </button>
         <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-44 z-50 transition-[margin,opacity] duration-300 mt-2 bg-white shadow-lg border rounded-lg p-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="pages-gallery.html">
+            {{-- <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="pages-gallery.html">
                 <i class="mgc_pic_2_line  me-2"></i> 
                 <span>Gallery</span>
             </a>
@@ -176,7 +176,7 @@
             <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="auth-login.html">
                 <i class="mgc_lock_line  me-2"></i> 
                 <span>Lock Screen</span>
-            </a>
+            </a> --}}
             <hr class="my-2 -mx-2 border-gray-200 dark:border-gray-700">
             <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="{{route('admin.logout')}}">
                 <i class="mgc_exit_line  me-2"></i> 

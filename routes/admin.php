@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,13 @@ Route::controller(AuthAdminController::class)->group(function () {
 Route::middleware(['admin'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
+    });
+
+    // Slider
+    Route::controller(SliderController::class)->group(function(){
+        Route::get('/slider', 'index')->name('slider');
+        Route::get('/slider/create', 'create')->name('slider.create');
+        Route::post('/slider/store', 'store')->name('slider.store');
     });
 });
 

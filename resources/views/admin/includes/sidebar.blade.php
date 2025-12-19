@@ -1,7 +1,7 @@
 <div class="app-menu">
 
     {{-- Sidenav Brand Logo --}}
-    <a href="" class="logo-box">
+    <a href="{{route('admin.dashboard')}}" class="logo-box">
         {{-- Light Brand Logo --}}
         <div class="logo-light">
             {{-- <img src="{{ asset('assets/images/logo-light.png') }}" class="logo-lg h-6" alt="Light logo">
@@ -29,7 +29,7 @@
             <li class="menu-title">Menu</li>
 
             <li class="menu-item">
-                <a href="" class="menu-link">
+                <a href="{{route('admin.dashboard')}}" class="menu-link">
                     <span class="menu-icon"><i class="mgc_home_3_line"></i></span>
                     <span class="menu-text"> Dashboard </span>
                 </a>
@@ -37,34 +37,29 @@
 
             <li class="menu-title">Apps</li>
 
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="" class="menu-link">
                     <span class="menu-icon"><i class="mgc_calendar_line"></i></span>
                     <span class="menu-text"> Calendar </span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="menu-item">
                 <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
                     <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
-                    <span class="menu-text"> Project </span>
+                    <span class="menu-text"> Slider </span>
                     <span class="menu-arrow"></span>
                 </a>
 
                 <ul class="sub-menu hidden">
                     <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">List</span>
+                        <a href="{{route('admin.slider')}}" class="menu-link">
+                            <span class="menu-text">View</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">Detail</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">Create</span>
+                        <a href="{{route('admin.slider.create')}}" class="menu-link">
+                            <span class="menu-text">Add</span>
                         </a>
                     </li>
                 </ul>
