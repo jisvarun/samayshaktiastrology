@@ -178,7 +178,7 @@
                 <span>Lock Screen</span>
             </a>
             <hr class="my-2 -mx-2 border-gray-200 dark:border-gray-700">
-            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="auth-login.html">
+            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="{{route('admin.logout')}}">
                 <i class="mgc_exit_line  me-2"></i> 
                 <span>Log Out</span>
             </a>
