@@ -3,7 +3,7 @@
 @section('content')
     {{-- Page Title Start --}}
     <div class="flex justify-between items-center mb-6">
-        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Slider Create</h4>
+        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Service Create</h4>
 
         <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
             <div class="flex items-center gap-2">
@@ -13,7 +13,7 @@
 
             <div class="flex items-center gap-2">
                 <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Slider</a>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Service</a>
             </div>
 
             <div class="flex items-center gap-2">
@@ -48,34 +48,44 @@
                     <p class="text-sm text-gray-500 mt-2">Do not close or refresh this page</p>
                 </div>
 
-                <form id="sliderForm" action="{{route('admin.slider.store')}}" method="POST" enctype="multipart/form-data">
+                <form id="serviceForm" action="{{route('admin.service.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="slider" class="text-gray-800 text-sm font-medium inline-block mb-2">
-                            Slider Name
+                        <label for="service" class="text-gray-800 text-sm font-medium inline-block mb-2">
+                            Service Name
                         </label>
-                        <input type="text" class="form-input @error('slider') border-danger @enderror" id="slider" name="slider" aria-describedby="sliderHelp"
-                            placeholder="Enter Slider Name" value="{{ old('slider') }}">
-                        @error('slider')
+                        <input type="text" class="form-input @error('service') border-danger @enderror" id="service" name="service" aria-describedby="serviceHelp"
+                            placeholder="Enter Service Name" value="{{ old('service') }}">
+                        @error('service')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="sliderOrder" class="text-gray-800 text-sm font-medium inline-block mb-2">
-                            Slider Order
+                        <label for="service_hn" class="text-gray-800 text-sm font-medium inline-block mb-2">
+                            Service Name in Hindi <a href="https://translate.google.com/?hl=en&sl=en&tl=hi&op=translate" target="_blank" class="text-primary">(For Hindi Typing)</a>
                         </label>
-                        <input type="number" class="form-input @error('slider_order') border-danger @enderror" id="sliderOrder" name="slider_order"
-                            aria-describedby="sliderHelp" placeholder="Enter Slider Order" value="{{ old('slider_order') }}">
-                        @error('slider_order')
+                        <input type="text" class="form-input @error('service_hn') border-danger @enderror" id="service_hn" name="service_hn" aria-describedby="serviceHelp"
+                            placeholder="Enter Service Name in Hindi" value="{{ old('service_hn') }}">
+                        @error('service_hn')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="sliderFile" class="text-gray-800 text-sm font-medium inline-block mb-2">Choose
-                            Slider</label>
-                        <input type="file" class="form-input @error('slider_file') border border-danger p-3 @enderror" id="sliderFile" name="slider_file"
+                        <label for="serviceOrder" class="text-gray-800 text-sm font-medium inline-block mb-2">
+                            Service Order
+                        </label>
+                        <input type="number" class="form-input @error('service_order') border-danger @enderror" id="serviceOrder" name="service_order"
+                            aria-describedby="serviceHelp" placeholder="Enter Service Order" value="{{ old('service_order') }}">
+                        @error('service_order')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="serviceFile" class="text-gray-800 text-sm font-medium inline-block mb-2">Choose
+                            Service</label>
+                        <input type="file" class="form-input @error('service_file') border border-danger p-3 @enderror" id="serviceFile" name="service_file"
                             accept="image/jpg,image/jpeg,image/png,image/webp">
-                        @error('slider_file')
+                        @error('service_file')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                         <div id="imagePreview" class="mt-4" style="display: none;">
@@ -102,7 +112,7 @@
 @section('script')
     <script>
         // Image preview functionality
-        document.getElementById('sliderFile').addEventListener('change', function(e) {
+        document.getElementById('serviceFile').addEventListener('change', function(e) {
             const file = e.target.files[0];
             const previewContainer = document.getElementById('imagePreview');
             const previewImage = document.getElementById('previewImage');
@@ -128,7 +138,7 @@
         });
 
         // Form submission with progress indicator
-        const sliderForm = document.getElementById('sliderForm');
+        const serviceForm = document.getElementById('serviceForm');
         
         /**
          * Why remove event listener after submission?
@@ -148,7 +158,7 @@
             const submitSpinner = document.getElementById('submitSpinner');
 
             // Prevent form submission if file is not selected
-            const fileInput = document.getElementById('sliderFile');
+            const fileInput = document.getElementById('serviceFile');
             if (!fileInput.files || fileInput.files.length === 0) {
                 e.preventDefault();
                 return false;
@@ -164,11 +174,11 @@
 
             // Remove event listener after form submission starts
             // This prevents memory leaks and ensures clean state
-            sliderForm.removeEventListener('submit', handleFormSubmit);
+            serviceForm.removeEventListener('submit', handleFormSubmit);
 
             // Form will submit normally, overlay will remain until page reloads
         };
 
-        sliderForm.addEventListener('submit', handleFormSubmit);
+        serviceForm.addEventListener('submit', handleFormSubmit);
     </script>
 @endsection

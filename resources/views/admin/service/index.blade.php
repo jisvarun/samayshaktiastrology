@@ -3,7 +3,7 @@
 @section('content')
     {{-- Page Title Start --}}
     <div class="flex justify-between items-center mb-6">
-        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Slider List</h4>
+        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Service List</h4>
 
         <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
             <div class="flex items-center gap-2">
@@ -13,7 +13,7 @@
 
             <div class="flex items-center gap-2">
                 <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Slider</a>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Service</a>
             </div>
 
             <div class="flex items-center gap-2">
@@ -56,8 +56,8 @@
                                             </div>
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Slider
-                                            Name</th>
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                                            Service Name</th>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image
                                         </th>
@@ -73,7 +73,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                    @foreach ($sliders as $slider)
+                                    @foreach ($services as $service)
                                         <tr>
                                             <td class="py-3 ps-4">
                                                 <div class="flex items-center h-5">
@@ -84,11 +84,11 @@
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                                {{$slider->slider ?? '-'}}
+                                                {{$service->service ?? '-'}}
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                            <img src="{{asset('storage/' . $slider->slider_file)}}" alt="img" style="width: 25%">
+                                            <img src="{{asset('storage/' . $service->service_file)}}" alt="img" style="width: 25%">
                                             </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
@@ -116,6 +116,6 @@
         </div>
     </div>
     <div>
-        {{ $sliders->links() }}
+        {{ $services->links() }}
     </div>
 @endsection

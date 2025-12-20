@@ -69,6 +69,7 @@
 
     {{-- Dashboard Project Page js --}}
     {{-- <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script> --}}
+    @yield('script')
 
 </body>
 </html>

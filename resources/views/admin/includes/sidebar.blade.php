@@ -47,7 +47,7 @@
             <li class="menu-item">
                 <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
                     <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
-                    <span class="menu-text"> Slider </span>
+                    <span class="menu-text"> Sliders </span>
                     <span class="menu-arrow"></span>
                 </a>
 
@@ -59,6 +59,26 @@
                     </li>
                     <li class="menu-item">
                         <a href="{{route('admin.slider.create')}}" class="menu-link">
+                            <span class="menu-text">Add</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                    <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
+                    <span class="menu-text"> Services </span>
+                    <span class="menu-arrow"></span>
+                </a>
+
+                <ul class="sub-menu hidden">
+                    <li class="menu-item">
+                        <a href="{{route('admin.service')}}" class="menu-link">
+                            <span class="menu-text">View</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{route('admin.service.create')}}" class="menu-link">
                             <span class="menu-text">Add</span>
                         </a>
                     </li>

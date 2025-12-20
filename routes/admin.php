@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,13 @@ Route::middleware(['admin'])->group(function () {
         Route::get('/slider', 'index')->name('slider');
         Route::get('/slider/create', 'create')->name('slider.create');
         Route::post('/slider/store', 'store')->name('slider.store');
+    });
+
+    // Services
+    Route::controller(ServiceController::class)->group(function(){
+        Route::get('/service', 'index')->name('service');
+        Route::get('/service/create', 'create')->name('service.create');
+        Route::post('/service/store', 'store')->name('service.store');
     });
 });
 
